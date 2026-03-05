@@ -5,74 +5,6 @@
   <title></title>
 
   <link rel="shortcut icon" type="image/ico" href="../../../files/mixly.ico">
-  
-  <!-- =========================================
-       ESTILOS DA SPLASH SCREEN (CARREGAMENTO)
-  ========================================= -->
-  <style>
-    #splash-screen {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: #1e1e1e; /* Fundo escuro alinhado com o novo tema */
-      z-index: 999999;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transition: opacity 0.6s ease-in-out, visibility 0.6s;
-    }
-    
-    .splash-content {
-      text-align: center;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-    
-    .splash-title {
-      font-size: 42px;
-      font-weight: bold;
-      color: #007acc;
-      margin-bottom: 10px;
-      letter-spacing: 2px;
-    }
-    
-    .splash-subtitle {
-      font-size: 16px;
-      color: #aaaaaa;
-      margin-bottom: 40px;
-    }
-    
-    /* Animação do anel de carregamento */
-    .loader-spinner {
-      border: 4px solid #333333;
-      border-top: 4px solid #007acc;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      animation: spin 1s linear infinite;
-      margin: 0 auto;
-    }
-    
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-    
-    .splash-watermark {
-      margin-top: 60px;
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 20px;
-      font-weight: bold;
-      color: rgba(255, 255, 255, 0.2);
-    }
-
-    .splash-fade-out {
-      opacity: 0;
-      visibility: hidden;
-    }
-  </style>
 
   <script type="text/javascript" src="../../ThirdParty/arduino_Cittius/common/blockly-core/base.js"></script>
   <script type="text/javascript" src="../../ThirdParty/arduino_Cittius/common/mixly/jquery-1.11.3.min.js"></script>
@@ -163,18 +95,6 @@
 
 </head>
 <body>
-
-  <!-- =========================================
-       ESTRUTURA DA SPLASH SCREEN
-  ========================================= -->
-  <div id="splash-screen">
-    <div class="splash-content">
-      <div class="splash-title">IDE Robótica</div>
-      <div class="splash-subtitle">A carregar o ambiente de programação...</div>
-      <div class="loader-spinner"></div>
-      <div class="splash-watermark">@caiofps_</div>
-    </div>
-  </div>
 
   <!-- Marca de água fixa do ecrã de trabalho -->
   <div id="watermark-caio">@caiofps_</div>
@@ -4134,23 +4054,6 @@
   </xml>
 
   <script>
-    // =========================================
-    // LÓGICA DA SPLASH SCREEN E DE ARRANQUE
-    // =========================================
-    window.addEventListener('load', function() {
-      // Espera 1.5s após o carregamento da página para apreciar o logo
-      setTimeout(function() {
-        var splash = document.getElementById('splash-screen');
-        // Adiciona classe CSS para iniciar fade-out suave
-        splash.classList.add('splash-fade-out');
-        
-        // Remove a div do DOM após o fim da animação (0.6s)
-        setTimeout(function() {
-          splash.style.display = 'none';
-        }, 600);
-      }, 1500); 
-    });
-
     // Funções Originais
     function updateData() {
       var serial = new Serial();
