@@ -1,3 +1,6 @@
+#ifndef TEMPERATURE_H
+#define TEMPERATURE_H
+
 #include <SoftWire.h>
 
 SoftWire sensor1(A3,  22);
@@ -23,9 +26,9 @@ byte getTemperatureD(){
 
   sensorD.beginTransmission(0x4c); 
   sensorD.write(0x00); 
-  sensorD.endTransmission();    
+  sensorD.endTransmission();   
 
-  sensorD.requestFrom(0x4c, 2);    
+  sensorD.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensorD.available()>1) { temperatura[i] = sensorD.read();  }  
@@ -49,9 +52,9 @@ byte getTemperature1(){
 
   sensor1.beginTransmission(0x4c); 
   sensor1.write(0x00); 
-  sensor1.endTransmission();    
+  sensor1.endTransmission();   
 
-  sensor1.requestFrom(0x4c, 2);    
+  sensor1.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensor1.available()>1) { temperatura[i] = sensor1.read();  }  
@@ -75,9 +78,9 @@ byte getTemperature5(){
 
   sensor5.beginTransmission(0x4c); 
   sensor5.write(0x00); 
-  sensor5.endTransmission();    
+  sensor5.endTransmission();   
 
-  sensor5.requestFrom(0x4c, 2);    
+  sensor5.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensor5.available()>1) { temperatura[i] = sensor5.read();  }  
@@ -101,9 +104,9 @@ byte getTemperature6(){
 
   sensor6.beginTransmission(0x4c); 
   sensor6.write(0x00); 
-  sensor6.endTransmission();    
+  sensor6.endTransmission();   
 
-  sensor6.requestFrom(0x4c, 2);    
+  sensor6.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensor6.available()>1) { temperatura[i] = sensor6.read();  }  
@@ -127,9 +130,9 @@ byte getTemperature7(){
 
   sensor7.beginTransmission(0x4c); 
   sensor7.write(0x00); 
-  sensor7.endTransmission();    
+  sensor7.endTransmission();   
 
-  sensor7.requestFrom(0x4c, 2);    
+  sensor7.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensor7.available()>1) { temperatura[i] = sensor7.read();  }  
@@ -153,9 +156,9 @@ byte getTemperature8(){
 
   sensor8.beginTransmission(0x4c); 
   sensor8.write(0x00); 
-  sensor8.endTransmission();    
+  sensor8.endTransmission();   
 
-  sensor8.requestFrom(0x4c, 2);    
+  sensor8.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensor8.available()>1) { temperatura[i] = sensor8.read();  }  
@@ -178,9 +181,9 @@ byte getTemperatureA(){
 
   sensorA.beginTransmission(0x4c); 
   sensorA.write(0x00); 
-  sensorA.endTransmission();    
+  sensorA.endTransmission();   
 
-  sensorA.requestFrom(0x4c, 2);    
+  sensorA.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensorA.available()>1) { temperatura[i] = sensorA.read();  }  
@@ -204,9 +207,9 @@ byte getTemperatureB(){
 
   sensorB.beginTransmission(0x4c); 
   sensorB.write(0x00); 
-  sensorB.endTransmission();    
+  sensorB.endTransmission();   
 
-  sensorB.requestFrom(0x4c, 2);    
+  sensorB.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensorB.available()>1) { temperatura[i] = sensorB.read();  }  
@@ -229,9 +232,9 @@ byte getTemperatureC(){
 
   sensorC.beginTransmission(0x4c); 
   sensorC.write(0x00); 
-  sensorC.endTransmission();    
+  sensorC.endTransmission();   
 
-  sensorC.requestFrom(0x4c, 2);    
+  sensorC.requestFrom(0x4c, 2);   
 
   for(byte i=0;i<=2;i++){
     if (sensorC.available()>1) { temperatura[i] = sensorC.read();  }  
@@ -241,3 +244,21 @@ byte getTemperatureC(){
   }
   return temperatura[0];
 }
+
+// NOVA FUNCAO: Wrapper unificado para gerir as portas de forma limpa no ficheiro principal
+byte getTempUnificada(byte porta){
+  switch(porta){
+    case 1: return getTemperature1();
+    case 5: return getTemperature5();
+    case 6: return getTemperature6();
+    case 7: return getTemperature7();
+    case 8: return getTemperature8();
+    case 9: return getTemperatureA();
+    case 10: return getTemperatureB();
+    case 11: return getTemperatureC();
+    case 12: return getTemperatureD();
+    default: return 0;
+  }
+}
+
+#endif
