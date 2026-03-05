@@ -1,4 +1,3 @@
-
 #include <OneWireMod.h>
 
 #define P1 1
@@ -66,6 +65,17 @@ OneWireMega _PA(A8);
 OneWireMega _PB(A9);
 OneWireMega _PC(A10);
 OneWireMega _PD(A11);
+
+// NOVA FUNÇÃO: Estabiliza valores erráticos dos sensores usando média móvel simples
+int16_t filtroMedia(int16_t novoValor, int16_t *buffer, uint8_t &indice, uint8_t tamanho) {
+  buffer[indice] = novoValor;
+  indice = (indice + 1) % tamanho;
+  int32_t soma = 0;
+  for(uint8_t i = 0; i < tamanho; i++) {
+    soma += buffer[i];
+  }
+  return soma / tamanho;
+}
 
 int16_t GetRolo(uint8_t *Giro){
   uint16_t dado = (Giro[0] << 8) + Giro[1];
@@ -1494,6 +1504,15 @@ byte lerSensor_de_Cor(byte pin, byte get_){
           }
     break;
   }
+}
+
+// NOVA FUNÇÃO: Overload para suportar retorno específico se for necessário obter milímetros
+uint16_t lerSensor_de_Distancia(byte pin_, byte get_){
+  uint16_t cm = lerSensor_de_Distancia(pin_);
+  if(get_ == MILIMETROS){
+    return cm * 10;
+  }
+  return cm;
 }
 
 uint8_t lerSensor_de_Distancia(byte pin_){
