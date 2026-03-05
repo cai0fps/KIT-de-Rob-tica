@@ -1,6 +1,10 @@
 #ifndef VARIABLES_H
 #define VARIABLES_H
 
+// Versão e Autor - Interface UI Modernizada
+#define SYS_VERSION "v1.9"
+#define SYS_AUTHOR "@caiofps_"
+
 // Variaveis Globais
 extern boolean flagSetupMenu = false, // Setup da Tela
         flagSetupMotor = false,    // Setup da Tela Motor
@@ -57,8 +61,4 @@ extern char *namePort[12][2] = {{"M1", "A"}, {"M2", "B"}, {"M3", "C"}, {"M4", "D
 #define MILIMETROS 1
 #define ESCUTA 2
 
-
 #endif
-
-
-
