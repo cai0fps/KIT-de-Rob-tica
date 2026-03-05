@@ -1,0 +1,5 @@
+CorUltra	KEYWORD1
+Get_SoftSerialData	KEYWORD2
+Handler_SoftSerial	KEYWORD2
+PegarCor	KEYWORD2
+PegarUltra	KEYWORD2
