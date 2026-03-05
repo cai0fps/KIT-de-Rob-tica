@@ -34,7 +34,6 @@ byte getDistancia(byte port){
       }
   break;
 
-
   case 6:
     mySerial6.begin(57600);
     mySerial6.listen();
@@ -105,9 +104,13 @@ byte getDistancia(byte port){
     delay(30); // Dê tempo para o sensor responder
     if (mySerialD.available()) {
       return mySerialD.read();
-    }
-      
+    }      
   break;
   }
+  return 0; // Adicionado retorno padrao por seguranca
+}
 
+// NOVA FUNCAO: Retorna a conversao da distancia em Milimetros para rotinas de alta precisao
+uint16_t getDistanciaMM(byte port) {
+  return (uint16_t)getDistancia(port) * 10;
 }
