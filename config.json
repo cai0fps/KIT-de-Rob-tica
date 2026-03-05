@@ -2,31 +2,19 @@
     "boardImg": "./board/ThirdParty/arduino_Cittius/media/carinhoBase.png",
     "boardName": "KIT DE ROBÓTICA @caiofps_ v1.9",
     "board": {
-        "Controladora V2 - Serigrafia 2 (v1.9)": {
+        "Controladora @caiofps_ v1.9 (Portas A-D)": {
             "key": "arduino:avr:mega",
             "config": {
                 "cpu": [
                     {
                         "key": "atmega2560",
                         "label": "ATmega2560 (Mega 2560)"
-                    },
-                    {
-                        "key": "atmega1280",
-                        "label": "ATmega1280"
-                    },
-                    {
-                        "key": "16MHzatmega168",
-                        "label": "ATmega168 (5V, 16 MHz)"
-                    },
-                    {
-                        "key": "8MHzatmega168",
-                        "label": "ATmega168 (3.3V, 8 MHz)"
                     }
                 ]
             }
         },
-        "Controladora V2 - Serigrafia 1 (v1.9)": {
-            "key": "arduino:avr:mega2",
+        "Controladora @caiofps_ v1.9 (Portas 1-8)": {
+            "key": "arduino:avr:mega",
             "config": {
                 "cpu": [
                     {
@@ -38,41 +26,16 @@
         }
     },
     "language": "C/C++",
-    "burn": "None",
-    "upload": {
-        "portSelect": "all"
-    },
+    "version": "1.9.0",
     "nav": {
         "compile": true,
         "upload": true,
-        "save": {
-            "img": true,
-            "ino": true,
-            "hex": true
-        },
-        "setting": {
-            "thirdPartyLibrary": true,
-            "wiki": true
-        }
+        "save": { "img": true, "ino": true, "hex": true }
     },
     "serial": {
-        "ctrlCBtn": false,
-        "ctrlDBtn": false,
         "baudRates": 9600,
-        "yMax": 100,
-        "yMin": 0,
-        "pointNum": 100,
         "rts": true,
         "dtr": true
     },
-    "lib": {
-        "mixly": {
-            "url": [
-                "http://114.132.216.192:8099/mixly2/cloud-libraries/raw/master/cloud-libs/arduino_avr/libs.json"
-            ]
-        }
-    },
-    "boardIndex": "board\\ThirdParty\\arduino_Cittius\\index.html",
-    "version": "1.9.0",
-    "packagePath": []
+    "boardIndex": "board\\ThirdParty\\arduino_Cittius\\index.html"
 }
