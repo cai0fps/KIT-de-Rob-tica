@@ -27,11 +27,14 @@ uint16_t rgb565(unsigned long rgb)
 
 void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t number, uint16_t number2, uint8_t sensor)
 {
+  // Melhoria Visual da Caixa (Mais arredondado e limpo)
   int w = 57;
   int h = 40;
-  tft.drawRoundRect(x, y, w, h + 18, 5, TFT_WHITE);
+  tft.drawRoundRect(x, y, w, h + 18, 6, TFT_DARKGREY); // Contorno suavizado
+  tft.drawRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
   tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
   tft.drawCentreString(label, x + w / 2, y + 2, 2);
+  
   /*
     1-Sensor de toque / Analogico
     2-Sensor utrassonico
@@ -44,13 +47,13 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "D: %01d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD); // Paleta mais moderna
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   case 02:
     if (number == 0)
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -59,7 +62,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     }
     else
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
@@ -86,7 +89,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     switch (number)
     {
     case 0x00:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BACKGRAUD);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BACKGRAUD);
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BACKGRAUD);
@@ -95,7 +98,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x01:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -104,7 +107,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x02:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
@@ -113,7 +116,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x03:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BLUE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BLUE);
       tft.setTextColor(TFT_WHITE, TFT_BLUE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BLUE);
@@ -122,7 +125,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x04:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_YELLOW);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_YELLOW);
       tft.setTextColor(TFT_BLACK, TFT_YELLOW);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_YELLOW);
@@ -131,7 +134,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x05:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_ORANGE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_ORANGE);
       tft.setTextColor(TFT_BLACK, TFT_ORANGE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_ORANGE);
@@ -140,7 +143,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x06:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_WHITE);
       tft.setTextColor(TFT_BLACK, TFT_WHITE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_WHITE);
@@ -149,7 +152,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x07:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BLACK);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BLACK);
       tft.setTextColor(TFT_WHITE, TFT_BLACK);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BLACK);
@@ -180,12 +183,12 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
 {
   int w = 60;
   int h = 40;
-  tft.drawRoundRect(x, y, w, h + 18, 5, TFT_WHITE);
+  tft.drawRoundRect(x, y, w, h + 18, 6, TFT_DARKGREY);
+  tft.drawRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
   tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
   tft.drawCentreString(String(number0), x + w / 2, y + 2, 2);
 
   tft.setTextColor(colorLabel, TFT_BACKGRAUD);
-  // tft.setFreeFont(FSB9);
 
   /*
     1-Sensor de toque / Analogico
@@ -198,20 +201,20 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "D: %01d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   case 02:
     if (number)
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(number, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
     }
     else
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(number, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -239,11 +242,8 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "M: %04d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   }
 }
-
-
-
