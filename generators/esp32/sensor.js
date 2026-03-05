@@ -14,7 +14,7 @@ Blockly.Arduino.chaoshengbo = function () {
 	+ '  digitalWrite(' + dropdown_pin1 + ', LOW);\n' + '  delayMicroseconds(2);\n'
 	+ '  digitalWrite(' + dropdown_pin1 + ', HIGH);\n' + '  delayMicroseconds(10);\n'
 	+ '  digitalWrite(' + dropdown_pin1 + ', LOW);\n'
-	+ '  float distance = pulseIn(' + dropdown_pin2 + ', HIGH) / 58.00;\n'
+	+ '  float distance = pulseIn(' + dropdown_pin2 + ', HIGH, 30000) / 58.00;\n'
 	+ '  delay(10);\n' + '  return distance;\n'
 	+ '}\n';
     Blockly.Arduino.definitions_[funcName] = code;
@@ -57,4 +57,3 @@ Blockly.Arduino.sensor_light= function(){
 Blockly.Arduino.sensor_sound= function(){
   return ['analogRead(SOUND)', Blockly.Arduino.ORDER_ATOMIC];
 };
-
