@@ -1,3 +1,5 @@
+#ifndef TOQUE_H
+#define TOQUE_H
 
 bool sensorToque(uint8_t PORT){
   switch(PORT){
@@ -17,4 +19,21 @@ bool sensorToque(uint8_t PORT){
     return digitalRead(A6);
     break;
   }
+  return false;
 }
+
+// NOVA FUNCAO: Adiciona "Debounce" ao toque fisico. Previne que um clique faca o robo entender varios cliques rapidamente
+bool sensorToqueFiltro(uint8_t PORT){
+  static unsigned long ultimoClique[5] = {0, 0, 0, 0, 0};
+  bool estadoAtual = sensorToque(PORT);
+  
+  if (estadoAtual) {
+    if (millis() - ultimoClique[PORT] > 50) { // 50ms de tolerancia
+      ultimoClique[PORT] = millis();
+      return true;
+    }
+  }
+  return false;
+}
+
+#endif
