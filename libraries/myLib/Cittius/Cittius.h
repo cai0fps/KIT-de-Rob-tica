@@ -84,6 +84,7 @@ unsigned long timerMpu = 0;
 
 // Definições das Cores para TFT
 #define TFT_BACKGRAUD 3
+#define COLOR_HIGHLIGHT TFT_CYAN // Cor moderna para detalhes
 
 // Tamanho dos Botoes da Tela Principal
 #define BUTTON_W 95 // Largura
@@ -166,39 +167,39 @@ void updateButton()
   switch (btnMenu)
   {
   case 01:
-    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);    // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnProgram.drawSmoothButton(true, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);    
+    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
+    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  
+    btnProgram.drawSmoothButton(true, 3, TFT_BACKGRAUD); 
     btnConfig.drawSmoothButton(false, 3, TFT_BACKGRAUD);
     break;
   case 02:
-    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnMotor.drawSmoothButton(true, 3, TFT_BACKGRAUD);    // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     
+    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  
+    btnMotor.drawSmoothButton(true, 3, TFT_BACKGRAUD);    
+    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
     btnConfig.drawSmoothButton(false, 3, TFT_BACKGRAUD);
     break;
   case 03:
-    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnSensor.drawSmoothButton(true, 3, TFT_BACKGRAUD);   // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     
+    btnSensor.drawSmoothButton(true, 3, TFT_BACKGRAUD);   
+    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   
+    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
     btnConfig.drawSmoothButton(false, 3, TFT_BACKGRAUD);
     break;
   case 04:
-    btnApp.drawSmoothButton(true, 3, TFT_BACKGRAUD);      // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnApp.drawSmoothButton(true, 3, TFT_BACKGRAUD);      
+    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  
+    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   
+    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
     btnConfig.drawSmoothButton(false, 3, TFT_BACKGRAUD);
     break;
 
   case 05:
-    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnApp.drawSmoothButton(false, 3, TFT_BACKGRAUD);     
+    btnSensor.drawSmoothButton(false, 3, TFT_BACKGRAUD);  
+    btnMotor.drawSmoothButton(false, 3, TFT_BACKGRAUD);   
+    btnProgram.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
     btnConfig.drawSmoothButton(true, 3, TFT_BACKGRAUD);
     break;
   }
@@ -214,99 +215,99 @@ void selectMotores(byte value)
   case 0x01:
     if (enableM1)
     {
-      s1.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); 
+      s2.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s3.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s4.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
     }
     else
     {
-      s1.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_YELLOW); // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, COLOR_HIGHLIGHT); 
+      s2.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s3.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s4.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
     }
 
     break;
   case 0x02:
     if (enableM2)
     {
-      s1.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s2.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); 
+      s3.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s4.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
     }
     else
     {
-      s1.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_YELLOW); // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s2.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, COLOR_HIGHLIGHT); 
+      s3.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s4.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
     }
 
     break;
   case 0x03:
     if (enableM3)
     {
-      s1.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s2.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s3.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); 
+      s4.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
     }
     else
     {
-      s1.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_YELLOW); // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s2.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s3.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, COLOR_HIGHLIGHT); 
+      s4.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
     }
     break;
   case 0x04:
     if (enableM4)
     {
-      s1.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);            // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s2.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s3.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);  
+      s4.getBoundingRect(&x, &y, &w, &h);            
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); 
     }
     else
     {
-      s1.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s2.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s3.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   // Draw rectangle outline
-      s4.getBoundingRect(&x, &y, &w, &h);             // Update x,y,w,h with bounding box
-      tft.drawRect(x, y - 25, w, h + 40, TFT_YELLOW); // Draw rectangle outline
+      s1.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s2.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s3.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREY);   
+      s4.getBoundingRect(&x, &y, &w, &h);             
+      tft.drawRect(x, y - 25, w, h + 40, COLOR_HIGHLIGHT); 
     }
     break;
   }
@@ -567,90 +568,73 @@ void callbackBTNS(void)
 {
   /******************Botão Programa******************/
   if (btnProgram.justPressed() && menu == 0x00)
-  {                                     // Se estiver no menu Principal e o Botão Programa for pressionado
-    btnApp.drawSmoothButton(false);     // Desabilita o botão App
-    btnSensor.drawSmoothButton(false);  // Desabilita o botão Sensor
-    btnMotor.drawSmoothButton(false);   // Desabilita o botão Motor
-    btnProgram.drawSmoothButton(true);  // Habilita o botão Programa
-    btnConfig.drawSmoothButton(false);  // Habilita o botão Config
-    _delay(0.3);                        // Aguarde 300ms sem travamento
-    menu = 1;                           // Chaveia menu touch para 1
-    flagSetupProgram = false;           // Reseta a flag do Setup Programa do Aluno
-    btnProgram.drawSmoothButton(false); // Desabilita o botão Programa
-    _delay(0.3);                        // Aguarde 300ms sem travamento
-    // Apos realizar o efeito do botão Touch a tarefa (updateLoop) irá fazer o chaveamento das telas
-    /***************Fim do Botão Programa**************/
-
-    /******************Botão Motor******************/
+  {                                     
+    btnApp.drawSmoothButton(false);     
+    btnSensor.drawSmoothButton(false);  
+    btnMotor.drawSmoothButton(false);   
+    btnProgram.drawSmoothButton(true);  
+    btnConfig.drawSmoothButton(false);  
+    _delay(0.3);                        
+    menu = 1;                           
+    flagSetupProgram = false;           
+    btnProgram.drawSmoothButton(false); 
+    _delay(0.3);                        
   }
   else if (btnMotor.justPressed() && menu == 0x00)
-  {                                     // Se estiver no menu Principal e o Botão Motor for pressionado
-    btnApp.drawSmoothButton(false);     // Desabilita o botão App
-    btnSensor.drawSmoothButton(false);  // Desabilita o botão Sensor
-    btnProgram.drawSmoothButton(false); // Desabilita o botão Programa
-    btnMotor.drawSmoothButton(true);    // Habilita o botão Motor
-    btnConfig.drawSmoothButton(false);  // Habilita o botão Config
-    _delay(0.3);                        // Aguarde 300ms sem travamento
-    menu = 2;                           // Chaveia menu touch para 2
-    flagSetupMotor = false;             // Reseta a flag do Setup do Motor
-    btnMotor.drawSmoothButton(false);   // Desabilita o botão Motor
-    // Apos realizar o efeito do botão Touch a tarefa (updateLoop) irá fazer o chaveamento das telas
-    /***************Fim do Botão Motor**************/
-
-    /******************Botão Sensor******************/
+  {                                     
+    btnApp.drawSmoothButton(false);     
+    btnSensor.drawSmoothButton(false);  
+    btnProgram.drawSmoothButton(false); 
+    btnMotor.drawSmoothButton(true);    
+    btnConfig.drawSmoothButton(false);  
+    _delay(0.3);                        
+    menu = 2;                           
+    flagSetupMotor = false;             
+    btnMotor.drawSmoothButton(false);   
   }
   else if (btnSensor.justPressed() && menu == 0x00)
-  {                                     // Se estiver no menu Principal e o Botão Sensor for pressionado
-    btnApp.drawSmoothButton(false);     // Desabilita o botão App
-    btnMotor.drawSmoothButton(false);   // Desabilita o botão Sensor
-    btnProgram.drawSmoothButton(false); // Desabilita o botão Programa
-    btnSensor.drawSmoothButton(true);   // Habilita o botão Sensor
-    btnConfig.drawSmoothButton(false);  // Habilita o botão Config
-    _delay(0.3);                        // Aguarde 300ms sem travamento
-    menu = 3;                           // Chaveia menu touch para 3
-    flagSetupSensores = false;          // Reseta a flag do Setup do Sensor
-    btnSensor.drawSmoothButton(false);  // Desabilita o botão Motor
-
-    // Apos realizar o efeito do botão Touch a tarefa (updateLoop) irá fazer o chaveamento das telas
-    /***************Fim do Botão Sensor**************/
-
-    /******************Botão App******************/
+  {                                     
+    btnApp.drawSmoothButton(false);     
+    btnMotor.drawSmoothButton(false);   
+    btnProgram.drawSmoothButton(false); 
+    btnSensor.drawSmoothButton(true);   
+    btnConfig.drawSmoothButton(false);  
+    _delay(0.3);                        
+    menu = 3;                           
+    flagSetupSensores = false;          
+    btnSensor.drawSmoothButton(false);  
   }
   else if (btnApp.justPressed() && menu == 0x00)
-  {                                     // Se estiver no menu Principal e o Botão App for pressionado
-    btnSensor.drawSmoothButton(false);  // Desabilita o botão Sensor
-    btnMotor.drawSmoothButton(false);   // Desabilita o botão Motor
-    btnProgram.drawSmoothButton(false); // Desabilita o botão Programa
-    btnApp.drawSmoothButton(true);      // Habilita o botão App
-    btnConfig.drawSmoothButton(false);  // Habilita o botão Config
-    _delay(0.3);                        // Aguarde 300ms sem travamento
-    menu = 4;                           // Chaveia menu touch para 4
-    flagSetupApp = false;               // Reseta a flag do Setup do App
-    btnApp.drawSmoothButton(false);     // Desabilita o botão Appp
-    // Apos realizar o efeito do botão Touch a tarefa (updateLoop) irá fazer o chaveamento das telas
-    /***************Fim do Botão App**************/
-
-    /******************Botão Voltar******************/
+  {                                     
+    btnSensor.drawSmoothButton(false);  
+    btnMotor.drawSmoothButton(false);   
+    btnProgram.drawSmoothButton(false); 
+    btnApp.drawSmoothButton(true);      
+    btnConfig.drawSmoothButton(false);  
+    _delay(0.3);                        
+    menu = 4;                           
+    flagSetupApp = false;               
+    btnApp.drawSmoothButton(false);     
   }
   else if (btnConfig.justPressed() && menu == 0x00)
   {
-    btnSensor.drawSmoothButton(false);  // Desabilita o botão Sensor
-    btnMotor.drawSmoothButton(false);   // Desabilita o botão Motor
-    btnProgram.drawSmoothButton(false); // Desabilita o botão Programa
-    btnApp.drawSmoothButton(false);     // Habilita o botão App
+    btnSensor.drawSmoothButton(false);  
+    btnMotor.drawSmoothButton(false);   
+    btnProgram.drawSmoothButton(false); 
+    btnApp.drawSmoothButton(false);     
     btnConfig.drawSmoothButton(true);
-    _delay(0.3); // Aguarde 300ms sem travamento
-    menu = 5;    // Chaveia menu touch para 4
+    _delay(0.3); 
+    menu = 5;    
     flagSetupConfig = false;
-    btnConfig.drawSmoothButton(false); // Desabilita o botão Appp
+    btnConfig.drawSmoothButton(false); 
   }
   else if (btnBack.justPressed() && menu == 0x01)
-  {                                  // Se estiver tela de Programa e o Botão back for pressionado
-    btnBack.drawSmoothButton(true);  // Habilita o botão Back
-    _delay(0.3);                     // Aguarde 300ms sem travamento
-    btnBack.drawSmoothButton(false); // Desabilita o botão Back
-    menu = 0;                        // Chaveia menu touch para 0 para voltar ao Menu principal
-    btnMenu = 1;                     // Essa variavel auxilia no controle dos botões da controladora para mostrar ao usuario
+  {                                  
+    btnBack.drawSmoothButton(true);  
+    _delay(0.3);                     
+    btnBack.drawSmoothButton(false); 
+    menu = 0;                        
+    btnMenu = 1;                     
     flagSetupMenu = false;
     flagSetupProgram = false;
     flagSetupAluno = false;
@@ -666,8 +650,8 @@ void callbackBTNS(void)
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
-    menu = 0;    // Chaveia menu touch para 0 para voltar ao Menu principal
-    btnMenu = 2; // Essa variavel auxilia no controle dos botões da controladora para mostrar ao usuario
+    menu = 0;    
+    btnMenu = 2; 
     flagSetupMenu = false;
     enableM1 = false;
     enableM2 = false;
@@ -697,7 +681,7 @@ void callbackBTNS(void)
     flagSetupMenu = false;
   }
   else if (btnBack.justPressed() && menu == 0x03 && pageDosSensores == 1)
-  { // VOLTAR PAGINA MAIN
+  { 
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
@@ -705,12 +689,9 @@ void callbackBTNS(void)
     btnMenu = 3;
     flagSetupMenu = false;
     flagSetupSensores = false;
-
-    //  flagSetupSensores=false;
-    //  pageDosSensores=1;
   }
   else if (btnBack.justPressed() && menu == 0x03 && pageDosSensores == 2)
-  { // RECUAR
+  { 
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
@@ -718,7 +699,7 @@ void callbackBTNS(void)
     pageDosSensores = 1;
   }
   else if (btnBack.justPressed() && menu == 0x03 && pageDosSensores == 3)
-  { // RECUAR
+  { 
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
@@ -726,7 +707,7 @@ void callbackBTNS(void)
     pageDosSensores = 2;
   }
   else if (btnBack.justPressed() && menu == 0x03 && pageDosSensores == 4)
-  { // RECUAR
+  { 
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
@@ -734,7 +715,7 @@ void callbackBTNS(void)
     pageDosSensores = 3;
   }
   else if (btnBack.justPressed() && menu == 0x03 && pageDosSensores == 5)
-  { // RECUAR
+  { 
     btnBack.drawSmoothButton(true);
     _delay(0.3);
     btnBack.drawSmoothButton(false);
@@ -742,7 +723,7 @@ void callbackBTNS(void)
     pageDosSensores = 4;
   }
   else if (btnNext.justPressed() && menu == 0x03 && pageDosSensores == 1)
-  { // AVANCAR
+  { 
     btnNext.drawSmoothButton(true);
     _delay(0.3);
     btnNext.drawSmoothButton(false);
@@ -750,7 +731,7 @@ void callbackBTNS(void)
     pageDosSensores = 2;
   }
   else if (btnNext.justPressed() && menu == 0x03 && pageDosSensores == 2)
-  { // AVANCAR
+  { 
     btnNext.drawSmoothButton(true);
     _delay(0.3);
     btnNext.drawSmoothButton(false);
@@ -758,7 +739,7 @@ void callbackBTNS(void)
     pageDosSensores = 3;
   }
   else if (btnNext.justPressed() && menu == 0x03 && pageDosSensores == 3)
-  { // AVANCAR
+  { 
     btnNext.drawSmoothButton(true);
     _delay(0.3);
     btnNext.drawSmoothButton(false);
@@ -766,7 +747,7 @@ void callbackBTNS(void)
     pageDosSensores = 4;
   }
   else if (btnNext.justPressed() && menu == 0x03 && pageDosSensores == 4)
-  { // AVANCAR
+  { 
     btnNext.drawSmoothButton(true);
     _delay(0.3);
     btnNext.drawSmoothButton(false);
@@ -774,7 +755,7 @@ void callbackBTNS(void)
     pageDosSensores = 5;
   }
   else if (btnNext.justPressed() && menu == 0x03 && pageDosSensores == 5)
-  { // AVANCAR
+  { 
     btnNext.drawSmoothButton(true);
     _delay(0.3);
     btnNext.drawSmoothButton(false);
@@ -789,36 +770,38 @@ void pageMenu()
   {
     tft.setFreeFont(FM9);
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM); // Mudança para centralizar melhor o título
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("CITTIUS", 40, 10, 1);
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
+    
+    // Header Modernizado
+    tft.drawCentreString(SYS_AUTHOR " " SYS_VERSION, 120, 10, 2); 
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
     uint16_t x = (tft.width() - BUTTON_W) / 8;
     uint16_t y = tft.height() / 3 - BUTTON_H + 30;
 
 
-    btnProgram.initButtonUL(x, y, BUTTON_W, BUTTON_H, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "PROGRAMA", 1);
+    btnProgram.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "PROGRAMA", 1);
     btnProgram.setPressAction(callbackBTNS);
 
     y = tft.height() / 3 + 50;
 
-    btnMotor.initButtonUL(x, y, BUTTON_W, BUTTON_H, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "MOTOR", 0);
+    btnMotor.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "MOTOR", 0);
     btnMotor.setPressAction(callbackBTNS);
 
     x = tft.height() / 3 + 20;
 
-    btnSensor.initButtonUL(x, y, BUTTON_W, BUTTON_H, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "SENSOR", 1);
+    btnSensor.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "SENSOR", 1);
     btnSensor.setPressAction(callbackBTNS);
 
 
     y = tft.height() / 3 - 55;
 
-    btnApp.initButtonUL(x, y, BUTTON_W, BUTTON_H, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "APP", 1);
+    btnApp.initButtonUL(x, y, BUTTON_W, BUTTON_H, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "APP", 1);
     btnApp.setPressAction(callbackBTNS);
 
 
-    btnConfig.initButtonUL(20, 250, 200, 55, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "CONFIG", 1);
+    btnConfig.initButtonUL(20, 250, 200, 55, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "CONFIG", 1);
     btnConfig.setPressAction(callbackBTNS);
 
 
@@ -832,15 +815,15 @@ void pageAluno()
 {
   if (!flagSetupProgram && menu == 1)
   {
-    tft.fillScreen(8);
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
+    
+    tft.drawCentreString("Programa", 120, 10, 2);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
-
-    tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
-    tft.drawCentreString("Pressione btn <<4s", 100, 10, 1);
+    tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
+    tft.drawCentreString("Pressione btn <<4s", 120, 150, 2);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
 
     flagSetupProgram = true;
@@ -882,54 +865,46 @@ void pageMotor()
     pinMode(18, INPUT_PULLUP);
     pinMode(19, INPUT_PULLUP);
 
-    tft.fillScreen(8);
     tft.fillScreen(TFT_BLACK);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BLACK);
-    tft.drawCentreString("Motores", 182, 10, 1);
-    tft.fillRoundRect(0, 25, 240, 2, 0, TFT_YELLOW);
+    tft.drawCentreString("Motores", 120, 10, 2);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    //  tft.fillRect(0, 26, 240, 340, TFT_BLACK);
     tft.setTextDatum(MC_DATUM);
-   // btnBack.initButtonUL(5, 2, 70, 24, TFT_YELLOW, TFT_BLACK, TFT_YELLOW, "<<", 1);
-   // btnBack.setPressAction(callbackBTNS);
-   // btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
 
     // Create a parameter set for the slider
     slider_t param;
 
-    // Slider slot parameters
-    param.slotWidth = 9;          // Note: ends of slot will be rounded and anti-aliased
-    param.slotLength = 220;       // Length includes rounded ends
-    param.slotColor = TFT_YELLOW; // Slot colour
-    param.slotBgColor = TFT_RED;  // Slot background colour for anti-aliasing
-    param.orientation = H_SLIDER; // sets it "true" for horizontal
+    param.slotWidth = 9;          
+    param.slotLength = 220;       
+    param.slotColor = COLOR_HIGHLIGHT; 
+    param.slotBgColor = TFT_DARKGREY;  
+    param.orientation = H_SLIDER; 
 
-    // Slider control knob parameters (smooth rounded rectangle)
-    param.knobWidth = 15;          // Always along x axis
-    param.knobHeight = 25;         // Always along y axis
-    param.knobRadius = 5;          // Corner radius
-    param.knobColor = TFT_WHITE;   // Anti-aliased with slot backgound colour
-    param.knobLineColor = TFT_RED; // Colour of marker line (set to same as knobColor for no line)
+    param.knobWidth = 15;          
+    param.knobHeight = 25;         
+    param.knobRadius = 5;          
+    param.knobColor = TFT_WHITE;   
+    param.knobLineColor = TFT_DARKGREY; 
 
-    // Slider range and movement speed
-    param.sliderLT = -100;   // Left side for horizontal, top for vertical slider
-    param.sliderRB = 100;    // Right side for horizontal, bottom for vertical slider
-    param.startPosition = 0; // Start position for control knob
-    param.sliderDelay = 300; // Microseconds per pixel movement delay (0 = no delay)
+    param.sliderLT = -100;   
+    param.sliderRB = 100;    
+    param.startPosition = 0; 
+    param.sliderDelay = 300; 
 
     /************Slider do Motor A***************/
     int16_t x, y;
     uint16_t w, h;
     s1.drawSlider(10, 55, param);
-    s1.getBoundingRect(&x, &y, &w, &h); // Update x,y,w,h with bounding box
+    s1.getBoundingRect(&x, &y, &w, &h); 
     if (enableM1)
     {
-      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); // Draw rectangle outline
+      tft.drawRect(x, y - 25, w, h + 40, TFT_GREEN); 
     }
     else
     {
-      tft.drawRect(x, y - 25, w, h + 40, TFT_YELLOW); // Draw rectangle outline
+      tft.drawRect(x, y - 25, w, h + 40, COLOR_HIGHLIGHT); 
     }
 
     tft.setFreeFont(FSB9);
@@ -965,8 +940,8 @@ void pageMotor()
 
     /************Slider do Motor B***************/
     s2.drawSlider(10, 128, param);
-    s2.getBoundingRect(&x, &y, &w, &h);               // Update x,y,w,h with bounding box
-    tft.drawRect(x, y - 25, w, h + 40, TFT_DARKGREY); // Draw rectangle outline
+    s2.getBoundingRect(&x, &y, &w, &h);               
+    tft.drawRect(x, y - 25, w, h + 40, TFT_DARKGREY); 
 
     tft.setFreeFont(FSB9);
     tft.setTextDatum(BL_DATUM);
@@ -1001,8 +976,8 @@ void pageMotor()
 
     /************Slider do Motor C***************/
     s3.drawSlider(10, 200, param);
-    s3.getBoundingRect(&x, &y, &w, &h);           // Update x,y,w,h with bounding box
-    tft.drawRect(x, y - 25, w, h + 40, TFT_GREY); // Draw rectangle outline
+    s3.getBoundingRect(&x, &y, &w, &h);           
+    tft.drawRect(x, y - 25, w, h + 40, TFT_GREY); 
 
     tft.setFreeFont(FSB9);
     tft.setTextDatum(BL_DATUM);
@@ -1037,8 +1012,8 @@ void pageMotor()
 
     /************Slider do Motor C***************/
     s4.drawSlider(10, 272, param);
-    s4.getBoundingRect(&x, &y, &w, &h);           // Update x,y,w,h with bounding box
-    tft.drawRect(x, y - 25, w, h + 40, TFT_GREY); // Draw rectangle outline
+    s4.getBoundingRect(&x, &y, &w, &h);           
+    tft.drawRect(x, y - 25, w, h + 40, TFT_GREY); 
 
     tft.setFreeFont(FSB9);
     tft.setTextDatum(BL_DATUM);
@@ -1081,25 +1056,25 @@ void pageMotor()
   tft.setTextDatum(BR_DATUM);
   tft.setTextColor(TFT_WHITE, TFT_BLACK);
 
-  s1.getBoundingRect(&x, &y, &w, &h); // Update x,y,w,h with bounding box
+  s1.getBoundingRect(&x, &y, &w, &h); 
   sprintf(txt0, " %03d", s1.getSliderPosition());
   tft.drawRightString(txt0, x + 80, y + 30, 1);
   sprintf(txt0, " %06d", getCodePin(m1));
   tft.drawCentreString(txt0, x + 175, y + 30, 1);
 
-  s2.getBoundingRect(&x, &y, &w, &h); // Update x,y,w,h with bounding box
+  s2.getBoundingRect(&x, &y, &w, &h); 
   sprintf(txt0, " %03d", s2.getSliderPosition());
   tft.drawRightString(txt0, x + 80, y + 30, 1);
   sprintf(txt0, " %06d", getCodePin(m2));
   tft.drawCentreString(txt0, x + 175, y + 30, 1);
 
-  s3.getBoundingRect(&x, &y, &w, &h); // Update x,y,w,h with bounding box
+  s3.getBoundingRect(&x, &y, &w, &h); 
   sprintf(txt0, " %03d", s3.getSliderPosition());
   tft.drawRightString(txt0, x + 80, y + 30, 1);
   sprintf(txt0, " %06d", getCodePin(m3));
   tft.drawCentreString(txt0, x + 175, y + 30, 1);
 
-  s4.getBoundingRect(&x, &y, &w, &h); // Update x,y,w,h with bounding box
+  s4.getBoundingRect(&x, &y, &w, &h); 
   sprintf(txt0, " %03d", s4.getSliderPosition());
   tft.drawRightString(txt0, x + 80, y + 30, 1);
   sprintf(txt0, " %06d", getCodePin(m4));
@@ -1115,13 +1090,10 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
 {
   int w = 57;
   int h = 40;
-  tft.drawRoundRect(x, y, w, h + 18, 5, TFT_WHITE);
+  tft.drawRoundRect(x, y, w, h + 18, 6, TFT_DARKGREY);
+  tft.drawRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
   tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
   tft.drawCentreString(label, x + w / 2, y + 2, 2);
-  /*
-    1-Sensor de toque / Analogico
-    2-Sensor utrassonico
-  */
 
   switch (sensor)
   {
@@ -1130,13 +1102,13 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "D: %01d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   case 02:
     if (number == 0)
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -1145,7 +1117,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     }
     else
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
@@ -1168,7 +1140,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
     switch (number)
     {
     case 0x00:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BACKGRAUD);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BACKGRAUD);
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BACKGRAUD);
@@ -1177,7 +1149,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x01:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -1186,7 +1158,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x02:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
@@ -1195,7 +1167,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x03:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BLUE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BLUE);
       tft.setTextColor(TFT_WHITE, TFT_BLUE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BLUE);
@@ -1204,7 +1176,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x04:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_YELLOW);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_YELLOW);
       tft.setTextColor(TFT_BLACK, TFT_YELLOW);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_YELLOW);
@@ -1213,7 +1185,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x05:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_ORANGE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_ORANGE);
       tft.setTextColor(TFT_BLACK, TFT_ORANGE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_ORANGE);
@@ -1222,7 +1194,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x06:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_WHITE);
       tft.setTextColor(TFT_BLACK, TFT_WHITE);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(TFT_BLACK, TFT_WHITE);
@@ -1231,7 +1203,7 @@ void createBoxDraw(char *label, int x, int y, uint16_t colorLabel, uint16_t numb
       break;
 
     case 0x07:
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_BLACK);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_BLACK);
       tft.setTextColor(TFT_WHITE, TFT_BLACK);
       tft.drawCentreString(label, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_BLACK);
@@ -1293,17 +1265,13 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
 {
   int w = 60;
   int h = 40;
-  tft.drawRoundRect(x, y, w, h + 18, 5, TFT_WHITE);
+  tft.drawRoundRect(x, y, w, h + 18, 6, TFT_DARKGREY);
+  tft.drawRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_WHITE);
   tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
   tft.drawCentreString(String(number0), x + w / 2, y + 2, 2);
 
   tft.setTextColor(colorLabel, TFT_BACKGRAUD);
-  // tft.setFreeFont(FSB9);
 
-  /*
-    1-Sensor de toque / Analogico
-    2-Sensor utrassonico
-  */
   switch (sensor)
   {
   case 01:
@@ -1311,20 +1279,20 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "D: %01d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   case 02:
     if (number)
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_DARKGREEN);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_DARKGREEN);
       tft.setTextColor(TFT_WHITE, TFT_DARKGREEN);
       tft.drawCentreString(number, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_DARKGREEN);
     }
     else
     {
-      tft.fillRoundRect(x + 1, y + 1, w - 2, h + 16, 5, TFT_RED);
+      tft.fillRoundRect(x + 2, y + 2, w - 4, h + 14, 4, TFT_RED);
       tft.setTextColor(TFT_WHITE, TFT_RED);
       tft.drawCentreString(number, x + w / 2, y + 2, 2);
       tft.setTextColor(colorLabel, TFT_RED);
@@ -1352,7 +1320,7 @@ void createBoxDraw(byte number0, int x, int y, uint16_t colorLabel, uint16_t num
     tft.setTextColor(colorLabel, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 2, h + y - 20, 2);
     sprintf(txt0, "M: %04d", number2);
-    tft.setTextColor(TFT_BLUE, TFT_BACKGRAUD);
+    tft.setTextColor(TFT_CYAN, TFT_BACKGRAUD);
     tft.drawCentreString(String(txt0), x + w / 3.2, h + y - 3, 2);
     break;
   }
@@ -1365,15 +1333,10 @@ void pageConfig()
   if (!flagSetupConfig && menu == 5)
   {
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("Configuracao", 172, 10, 1);
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
-
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-   // btnBack.initButtonUL(5, 2, 70, 20, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
-   // btnBack.setPressAction(callbackBTNS);
-   // btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    tft.drawCentreString("Configuracao", 120, 10, 2);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
     tft.setFreeFont(FSI12);
 
@@ -1385,7 +1348,7 @@ void pageConfig()
     switch (menuConfig)
     {
     case 0x01:
-      tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+      tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
       tft.setCursor(10, 50);
       tft.print("Serigrafia : ");
       if (EEPROM.read(ADDRESS_SERIGRAFIA) == 0)
@@ -1396,19 +1359,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
 
     case 0x02:
@@ -1423,19 +1386,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
-      tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+      tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
     case 0x03:
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
@@ -1449,19 +1412,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
-      tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+      tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
 
     case 0x04:
@@ -1476,24 +1439,24 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
-      tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+      tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 140);
       tft.print("Beep : ");
-      if (EEPROM.read(ADDRESS_SENSOR_BUZZER) == 0) // estou aqui
+      if (EEPROM.read(ADDRESS_SENSOR_BUZZER) == 0) 
       {
         tft.print("Desativado");
       }
@@ -1501,7 +1464,7 @@ void pageConfig()
       {
         tft.print("Ativado");
       }
-      tft.fillRoundRect(0, 148, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 148, 240, 2, 0, TFT_DARKGREY);
       break;
     }
   }
@@ -1521,19 +1484,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
 
     case 0x02:
@@ -1548,19 +1511,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_GREEN, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
     case 0x03:
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
@@ -1574,19 +1537,19 @@ void pageConfig()
       {
         tft.print("A,B,C e D");
       }
-      tft.fillRoundRect(0, 58, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 58, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
       tft.setCursor(10, 80);
       tft.print("S. de COR : Tipo ");
       tft.print(typeSensorColor);
-      tft.fillRoundRect(0, 88, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 88, 240, 2, 0, TFT_DARKGREY);
 
       tft.setTextColor(TFT_GREEN, TFT_BACKGRAUD);
       tft.setCursor(10, 110);
       tft.print("S. Utrassonico : Tipo ");
       tft.print(typeSensorUtra);
-      tft.fillRoundRect(0, 118, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 118, 240, 2, 0, TFT_DARKGREY);
       break;
     }
   }
@@ -1596,19 +1559,16 @@ void printSensor33()
 {
   if (!flagSetupSensores){    
     tft.fillScreen(TFT_BACKGRAUD);
-      tft.setTextDatum(BR_DATUM);
+      tft.setTextDatum(BC_DATUM);
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    // tft.drawCentreString("S. Toque " + String(typeSensorButton), 118, 10, 1);
-  //   tft.drawCentreString("Sensores", 118, 10, 1);
-      tft.fillRoundRect(0, 30, 240, 2, 0, 0x0A0A);
+      tft.fillRoundRect(0, 30, 240, 3, 0, COLOR_HIGHLIGHT);
 
-      tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
-      tft.drawCentreString("Pressione btn <<4s", 100, 10, 1);
+      tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
+      tft.drawCentreString("Pressione btn <<4s", 120, 10, 2);
       tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
 
-   //   tft.setTextDatum(CC_DATUM);
       if (serigrafia){
-        tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+        tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
         tft.drawRightString("1 = SOM", 140, 100, 1);
         tft.drawRightString("2-4 = BTN", 160, 115, 1);
         tft.drawRightString("5,7 = COR", 160, 130, 1);
@@ -1618,7 +1578,7 @@ void printSensor33()
         tft.drawRightString("C = GIRO", 150, 190, 1);
         tft.drawRightString("D = ADAPTA", 174, 205, 1);
       }else{
-        tft.setTextColor(TFT_YELLOW, TFT_BACKGRAUD);
+        tft.setTextColor(COLOR_HIGHLIGHT, TFT_BACKGRAUD);
         tft.drawRightString("1 = SOM", 140, 100, 1);
         tft.drawRightString("2-4 = BTN", 160, 115, 1);
         tft.drawRightString("5,7 = COR", 160, 130, 1);
@@ -1769,26 +1729,14 @@ void pageSensor()
     pinMode(19, INPUT_PULLUP);
 
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("Adaptadora", 118, 10, 1);
-    tft.fillRoundRect(0, 30, 240, 2, 0, 0x0A0A);
+    tft.drawCentreString("Adaptadora", 120, 10, 2);
+    tft.fillRoundRect(0, 30, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    //  btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD,TFT_YELLOW, "<<", 1);
-    //  btnBack.setPressAction(callbackBTNS);
-    //   btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, ">>", 1);
+    btnNext.initButtonUL(180, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, ">>", 1);
     btnNext.setPressAction(callbackBTNS);
-    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-
-    // desenho 2d do sensor
-    //   tft.fillRoundRect(85,120,70,100,3,0xDE50);
-    //  tft.fillRoundRect(100,120,30,30,3,TFT_GREY);
-
-    //  tft.fillTriangle(95,220,145,220,120,230, 0xF000);
+    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     flagSetupSensores = true;
   }
@@ -1823,57 +1771,18 @@ void pageSensor()
     pinMode(19, INPUT_PULLUP);
 
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-   // tft.drawCentreString("S. Toque " + String(typeSensorButton), 118, 10, 1);
-    tft.drawCentreString("Sensores" + String(typeSensorButton), 118, 10, 1);
-    tft.fillRoundRect(0, 30, 240, 2, 0, 0x0A0A);
+    tft.drawCentreString("Sensores " + String(typeSensorButton), 120, 10, 2);
+    tft.fillRoundRect(0, 30, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<<", 1);
+    btnBack.initButtonUL(3, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "<<", 1);
     btnBack.setPressAction(callbackBTNS);
-    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, ">>", 1);
+    btnNext.initButtonUL(180, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, ">>", 1);
     btnNext.setPressAction(callbackBTNS);
-    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-
-   // tft.drawCentreString("Som", 25, 95, 1);
-   // tft.drawCentreString("COR 1", 28, 170, 1);
-   // tft.drawCentreString("COR 2", 28, 250, 1);
-
-   /// tft.drawCentreString("CINZA 1", 65, 170, 1);
-   // tft.drawCentreString("CINZA 2", 65, 250, 1);
-
-    //tft.drawCentreString("Toque", 150, 95, 1);
-    //tft.drawCentreString("Temp", 206, 300, 1);
-    // desenho 2d do sensor
-    /*
-    switch (typeSensorButton)
-    {
-    case 01:
-      tft.fillRoundRect(85, 120, 70, 60, 3, 0xFFFF);
-      tft.fillRoundRect(85, 181, 70, 39, 3, 0xFFFF);
-
-      tft.fillRoundRect(80, 135, 5, 70, 3, 0xFFFF);
-      tft.fillRoundRect(155, 135, 5, 70, 3, 0xFFFF);
-
-      tft.fillTriangle(95, 220, 145, 220, 120, 230, 0xF000);
-      break;
-    case 02:
-      tft.fillRoundRect(85, 120, 70, 60, 3, 0xFFFF);
-      tft.fillRoundRect(85, 181, 70, 39, 3, TFT_GREY);
-
-      tft.fillRoundRect(80, 135, 5, 70, 3, TFT_GREY);
-      tft.fillRoundRect(155, 135, 5, 70, 3, TFT_GREY);
-
-      tft.fillTriangle(95, 220, 145, 220, 120, 230, 0xF000);
-      break;
-    }*/
-
-  
-
+    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     flagSetupSensores = true;
   }
@@ -1881,33 +1790,29 @@ void pageSensor()
   {
 
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("S.Utrass " + String(typeSensorUtra), 118, 10, 1);
-    tft.drawCentreString("Alcance: 6cm a 255cm", 118, 36, 1);
-    // tft.drawCentreString("5cm ate 255cm",118,56,1);
-    // tft.drawCentreString("Maior Valor = 255cm",118,56,1);
-    tft.fillRoundRect(0, 30, 240, 2, 0, 0x0A0A);
+    tft.drawCentreString("S.Utrass " + String(typeSensorUtra), 120, 10, 2);
+    tft.drawCentreString("Alcance: 6cm a 255cm", 120, 36, 1);
+    tft.fillRoundRect(0, 30, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
+    btnBack.initButtonUL(3, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "<< 4s", 1);
     btnBack.setPressAction(callbackBTNS);
-    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, ">> 4s", 1);
+    btnNext.initButtonUL(180, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, ">> 4s", 1);
     btnNext.setPressAction(callbackBTNS);
-    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     flagSetupSensores = true;
   }
   else if (!flagSetupSensores && menu == 3 && pageDosSensores == 3)
   {
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("S.de Cor " + String(typeSensorColor), 118, 10, 1);
-    tft.drawCentreString("TABELA DE CORES", 118, 36, 1);
+    tft.drawCentreString("S.de Cor " + String(typeSensorColor), 120, 10, 2);
+    tft.drawCentreString("TABELA DE CORES", 120, 36, 1);
 
     tft.drawRect(99, 59, 22, 22, TFT_WHITE);
     tft.fillRect(100, 60, 20, 20, TFT_RED);
@@ -1922,7 +1827,7 @@ void pageSensor()
     tft.drawCentreString("=3", 135, 113, 1);
 
     tft.drawRect(99, 134, 22, 22, TFT_WHITE);
-    tft.fillRect(100, 135, 20, 20, TFT_YELLOW);
+    tft.fillRect(100, 135, 20, 20, COLOR_HIGHLIGHT); // Substituído amarelo original para harmonizar
     tft.drawCentreString("=4", 135, 138, 1);
 
     tft.drawRect(99, 159, 22, 22, TFT_WHITE);
@@ -1937,58 +1842,52 @@ void pageSensor()
     tft.fillRect(100, 210, 20, 20, TFT_BLACK);
     tft.drawCentreString("=7", 135, 213, 1);
 
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
+    tft.fillRoundRect(0, 25, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
+    btnBack.initButtonUL(3, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "<< 4s", 1);
     btnBack.setPressAction(callbackBTNS);
-    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-    btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, ">> 4s", 1);
+    btnNext.initButtonUL(180, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, ">> 4s", 1);
     btnNext.setPressAction(callbackBTNS);
-    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     flagSetupSensores = true;
   }
   else if (!flagSetupSensores && menu == 3 && pageDosSensores == 4)
   {
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("S.de Cor " + String(typeSensorColor), 118, 10, 1);
-    tft.drawCentreString("ESCALA DE CINZA", 118, 36, 1);
-    tft.drawCentreString("Alcance: 0 ate 100", 118, 56, 1);
+    tft.drawCentreString("S.de Cor " + String(typeSensorColor), 120, 10, 2);
+    tft.drawCentreString("ESCALA DE CINZA", 120, 36, 1);
+    tft.drawCentreString("Alcance: 0 ate 100", 120, 56, 1);
 
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
+    btnBack.initButtonUL(3, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "<< 4s", 1);
     btnBack.setPressAction(callbackBTNS);
-    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
-    btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, ">> 4s", 1);
+    btnNext.initButtonUL(180, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, ">> 4s", 1);
     btnNext.setPressAction(callbackBTNS);
-    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     flagSetupSensores = true;
   }
   else if (!flagSetupSensores && menu == 3 && pageDosSensores == 5)
   {
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("Movimento", 130, 10, 1);
-    tft.drawCentreString("Giroscopio Interno", 118, 36, 1);
+    tft.drawCentreString("Movimento", 120, 10, 2);
+    tft.drawCentreString("Giroscopio Interno", 120, 36, 1);
 
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    btnBack.initButtonUL(3, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
+    btnBack.initButtonUL(3, 2, 55, 24, TFT_DARKGREY, TFT_BACKGRAUD, COLOR_HIGHLIGHT, "<< 4s", 1);
     btnBack.setPressAction(callbackBTNS);
-    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-
-    //     btnNext.initButtonUL(180, 2, 55, 24, 0x0A0A, TFT_BACKGRAUD,TFT_YELLOW, ">> 4s", 1);
-    //     btnNext.setPressAction(callbackBTNS);
-    //     btnNext.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
+    btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); 
 
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
 
@@ -2004,25 +1903,20 @@ void pageApp()
   if (!flagSetupApp && menu == 4)
   {
     tft.fillScreen(TFT_BACKGRAUD);
-    tft.setTextDatum(BR_DATUM);
+    tft.setTextDatum(BC_DATUM);
     tft.setTextColor(TFT_WHITE, TFT_BACKGRAUD);
-    tft.drawCentreString("App Dabble", 182, 10, 1);
-    tft.fillRoundRect(0, 25, 240, 2, 0, 0x0A0A);
+    tft.drawCentreString("App Dabble", 120, 10, 2);
+    tft.fillRoundRect(0, 28, 240, 3, 0, COLOR_HIGHLIGHT);
 
-    // btnProgram.setLabelDatum(NULL,65,BC_DATUM);
-   // btnBack.initButtonUL(5, 2, 70, 20, 0x0A0A, TFT_BACKGRAUD, TFT_YELLOW, "<< 4s", 1);
-   // btnBack.setPressAction(callbackBTNS);
-  //  btnBack.drawSmoothButton(false, 3, TFT_BACKGRAUD); // 3 é a largura do contorno, TFT_BACKGRAUD é a cor de fundo ao redor para anti-aliasing
-
-    tft.fillTriangle(100, 100, 140, 100, 120, 60, TFT_GREY);
-    tft.fillTriangle(20, 160, 60, 140, 60, 180, TFT_GREY);
-    tft.fillTriangle(220, 160, 180, 140, 180, 180, TFT_GREY);
-    tft.fillTriangle(100, 220, 140, 220, 120, 260, TFT_GREY);
+    tft.fillTriangle(100, 100, 140, 100, 120, 60, TFT_DARKGREY);
+    tft.fillTriangle(20, 160, 60, 140, 60, 180, TFT_DARKGREY);
+    tft.fillTriangle(220, 160, 180, 140, 180, 180, TFT_DARKGREY);
+    tft.fillTriangle(100, 220, 140, 220, 120, 260, TFT_DARKGREY);
 
     flagSetupApp = true;
   }
 
-  Dabble.processInput(); // this function is used to refresh data obtained from smartphone.Hence calling this function is mandatory in order to get data properly from your mobile.
+  Dabble.processInput(); 
 
   if (GamePad.isUpPressed())
   {
@@ -2054,35 +1948,26 @@ void pageApp()
 
   else if (GamePad.isSquarePressed())
   {
-    //    tft.drawRect(68,146,32,32,TFT_GREEN);
-    //    tft.drawRect(69,147,30,30,TFT_GREEN);
   }
 
   else if (GamePad.isCirclePressed())
   {
-    //    tft.drawCircle(155,160,16,TFT_GREEN);
-    //   tft.drawCircle(155,160,17,TFT_GREEN);
   }
 
   else if (GamePad.isCrossPressed())
   {
-    //   Serial.print("Cross");
   }
 
   else if (GamePad.isTrianglePressed())
   {
-    // tft.drawTriangle(103,139,136,139,120,104, TFT_GREEN);
-    // tft.drawTriangle(105,138,135,138,120,105, TFT_GREEN);
   }
 
   else if (GamePad.isStartPressed())
   {
-    //  Serial.print("Start");
   }
 
   else if (GamePad.isSelectPressed())
   {
-    // Serial.print("Select");
   }
   else
   {
@@ -2091,41 +1976,13 @@ void pageApp()
     tft.fillTriangle(220, 160, 180, 140, 180, 180, TFT_RED);
     tft.fillTriangle(100, 220, 140, 220, 120, 260, TFT_RED);
 
-    // tft.drawRect(68,146,32,32,TFT_RED);
-    // tft.drawRect(69,147,30,30,TFT_RED);
-
-    // tft.drawCircle(155,160,16,TFT_RED);
-    // tft.drawCircle(155,160,17,TFT_RED);
-
-    // tft.drawTriangle(103,139,136,139,120,104, TFT_RED);
-    // tft.drawTriangle(105,138,135,138,120,105, TFT_RED);
-
     setMotorPin(M1, 0);
     setMotorPin(M2, 0);
   }
-
-  /*
-    int a = GamePad.getAngle();
-    Serial.print("Angle: ");
-    Serial.print(a);
-    Serial.print('\t');
-    int b = GamePad.getRadius();
-    Serial.print("Radius: ");
-    Serial.print(b);
-    Serial.print('\t');
-    float c = GamePad.getXaxisData();
-    Serial.print("x_axis: ");
-    Serial.print(c);
-    Serial.print('\t');
-    float d = GamePad.getYaxisData();
-    Serial.print("y_axis: ");
-    Serial.println(d);
-    Serial.println();*/
 }
 
 void inicializacaoAluno()
 {
-  //
   _delay(1);
   setMotorPin(M1, 0);
   setMotorPin(M2, 0);
@@ -2137,12 +1994,12 @@ void inicializacaoAluno()
   flagLoopAluno = true;
 }
 
-// Configuração Inicial para Sistema Cittius
+// Configuração Inicial para Sistema Cittius (agora versão @caiofps_ v1.9)
 void initSetup()
 {
   // Configuração de Hardware
-  Serial.begin(9600); // Configura a taxa de transmissão em 115200, esse valor não pode ser alterado
-  Dabble.begin(9600); // Enter baudrate of your bluetooth.Connect bluetooth on Bluetooth port present on evive.
+  Serial.begin(9600); 
+  Dabble.begin(9600); 
 
   bounceP1.attach(A3, INPUT);
   bounceP1.interval(40);
@@ -2271,28 +2128,10 @@ void enableMotor()
 void updateLoop()
 {
   if(menu==1 || menu==3){
- // bounceP1.update();
- // bounceP2.update();
- // bounceP3.update();
- // bounceP4.update();
- // bouncePA.update();
- // bouncePB.update();
-
-
- // bounceP5.update();
- // bounceP6.update();
- // bounceP7.update();
- // bounceP8.update();
-  
- // bouncePB.update();
- // bouncePC.update();
- // bouncePD.update();
   mpu.update();
   }else if(menu == 0){
     
     uint16_t t_x = 9999, t_y = 9999; // To store the touch coordinates
-    // Scan keys every 50ms at most
-    // Pressed will be set true if there is a valid touch on the screen
     bool pressed = tft.getTouch(&t_x, &t_y);
 
     for (uint8_t b = 0; b < buttonCount; b++)
@@ -2350,11 +2189,6 @@ uint16_t t_x = 9999, t_y = 9999; // To store the touch coordinates
         scanTime = millis();
       }
   }
-
-
-
-
-
 
   btnEnter.tick(); // Habilita evento do botão Enter
   btnVoltar.tick();
