@@ -6,6 +6,32 @@
     --nav-right-btn-font-size: 16px;
     --nav-select-height: 28px;
     --footer-height: 22px;
+    /* =========================================
+   UI MODIFICATIONS & WATERMARK
+========================================= */
+
+#watermark-caio {
+    position: fixed;
+    bottom: 25px;
+    right: 35px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.15);
+    z-index: 9999;
+    pointer-events: none;
+    user-select: none;
+}
+
+body, #content_area {
+    background-color: #1e1e1e !important;
+}
+.blocklySvg {
+    background-color: #1e1e1e !important;
+}
+.blocklyToolboxDiv {
+    background-color: #252526 !important;
+    border-right: 1px solid #333 !important;
 }
 
 /*@media screen and (max-width: 1920px) {
