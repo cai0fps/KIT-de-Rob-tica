@@ -49,7 +49,7 @@ Blockly.Arduino.chaoshengbo2 = function () {
   + '  digitalWrite(' + Trig + ', LOW);\n' + '  delayMicroseconds(2);\n'
   + '  digitalWrite(' + Trig + ', HIGH);\n' + '  delayMicroseconds(10);\n'
   + '  digitalWrite(' + Trig + ', LOW);\n'
-  + '  float distance = pulseIn(' + Echo + ', HIGH) / 58.00;\n'
+  + '  float distance = pulseIn(' + Echo + ', HIGH, 30000) / 58.00;\n'
   + '  delay(10);\n' + '  return distance;\n'
   + '}\n';
   Blockly.Arduino.definitions_[funcName] = code;
@@ -490,7 +490,7 @@ Blockly.Arduino.PS2_init = function() {
   var PS2_SEL = this.getFieldValue('PS2_SEL');
   var PS2_CLK = this.getFieldValue('PS2_CLK');
   var rumble=this.getFieldValue('rumble');
- 
+  
   Blockly.Arduino.setups_['setup_ps2x_config_gamepad'] = 'ps2x.config_gamepad('+PS2_CLK+','+PS2_CMD+','+PS2_SEL+','+PS2_DAT+', true, '+rumble+');\n  delay(300);\n';  
   return "";
 };
@@ -550,7 +550,7 @@ Blockly.Arduino.tcs230_init = function() {
   +'\n    {'
   +'\n      digitalWrite(tcs230_S2,LOW);'
   +'\n      digitalWrite(tcs230_S3,LOW);'
-  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW);'
+  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW, 25000);'
   +'\n      frequency = map(frequency, 25, 72, 255, 0);'
   +'\n      break;'
   +'\n    }'
@@ -558,7 +558,7 @@ Blockly.Arduino.tcs230_init = function() {
   +'\n    {'
   +'\n      digitalWrite(tcs230_S2,HIGH);'
   +'\n      digitalWrite(tcs230_S3,HIGH);'
-  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW);'
+  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW, 25000);'
   +'\n      frequency = map(frequency, 30, 90, 255, 0);'
   +'\n      break;'
   +'\n    }'
@@ -566,7 +566,7 @@ Blockly.Arduino.tcs230_init = function() {
   +'\n    {'
   +'\n      digitalWrite(tcs230_S2,LOW);'
   +'\n      digitalWrite(tcs230_S3,HIGH);'
-  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW);'
+  +'\n      frequency = pulseIn(tcs230_sensorOut, LOW, 25000);'
   +'\n      frequency = map(frequency, 25, 70, 255, 0);'
   +'\n      break;'
   +'\n    }'
