@@ -1,11 +1,22 @@
 #include <SoftWire.h>
-
-
 #include <SoftwareSerial.h>
 
 //#define DEBUG
-#define blackThreshold 30
-#define whiteThreshold 100
+
+// Novas variáveis dinâmicas para calibração de cor (Substituem os antigos #defines fixos)
+uint16_t threshBlack = 30;
+uint16_t threshWhite = 100;
+
+// NOVA FUNÇÃO: Permite calibrar o sensor em tempo de execução
+void setColorThresholds(uint16_t newBlack, uint16_t newWhite) {
+  threshBlack = newBlack;
+  threshWhite = newWhite;
+}
+
+// NOVA FUNÇÃO: Converte valores RGB separados num formato HEX para o Display TFT
+uint32_t getRGBHex(byte r, byte g, byte b) {
+  return ((uint32_t)r << 16) | ((uint32_t)g << 8) | b;
+}
 
 /*
 bool enaI2C1=false,enaI2C2=false,enaI2C3=false,enaI2C5=false,enaI2C6=false,enaI2C7=false,enaI2C8=false,
@@ -100,34 +111,25 @@ byte getColorSensor1(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL && clearL>50 && clearL<70) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
-
         return lastColor;
       break;        
       case 0x01:
@@ -230,32 +232,24 @@ byte getColorSensorA(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
       if(errors == 0 ){
@@ -364,32 +358,24 @@ byte getColorSensorB(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
@@ -488,32 +474,24 @@ byte getColorSensorC(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
@@ -612,32 +590,24 @@ byte getColorSensorD(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
@@ -734,10 +704,10 @@ byte getColorSensor5(byte mode){
 
     switch(mode){
       case 0x00:
-        if(clearL < blackThreshold){
+        if(clearL < threshBlack){
           lastColor = 7;
         }else{
-          if(clearL >= whiteThreshold){
+          if(clearL >= threshWhite){
             lastColor = 6;
           }else{
           if (greenL > redL && greenL > blueL) {
@@ -746,19 +716,14 @@ byte getColorSensor5(byte mode){
             } else {
               lastColor = 2; // Green
             }
-          //  return lastColor;    
           } else if (blueL > redL && blueL > greenL) {
             lastColor = 3; 
-          //  return lastColor;    
           } else if (redL > blueL && greenL > blueL) {
             lastColor = 4; // Yellow
-        //   return lastColor;    
           } else if (redL > blueL && greenL < blueL) {
             lastColor = 1; 
-          //  return lastColor;    
           } else {
             lastColor = 8; // Unknown or Orange
-          //  return lastColor;     
           } 
         }       
        }
@@ -856,32 +821,24 @@ byte getColorSensor6(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
           if (redL > blueL) {
             lastColor = 4; // Yellow
           } else {
             lastColor = 2; // Green
           }
-        //  return lastColor;    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL < blueL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
@@ -978,31 +935,23 @@ byte getColorSensor7(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
             lastColor = 2; // Green
    
         } else if (blueL > redL && blueL > greenL && clearL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL && greenL > 25) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL > blueL &&  greenL < 20) {
           lastColor = 5; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && redL > greenL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
@@ -1099,31 +1048,23 @@ byte getColorSensor8(byte mode){
 
     switch(mode){
       case 0x00:
-        // You can adjust these thresholds based on your sensor readings
-        if (clearL < blackThreshold) {
+        if (clearL < threshBlack) {
           lastColor = 7; 
-      //   return lastColor;
-        } else if (clearL > whiteThreshold) {
+        } else if (clearL > threshWhite) {
           lastColor = 6; 
-        // return lastColor;
         } else if (greenL > redL && greenL > blueL) {
             lastColor = 2; // Green
    
         } else if (blueL > redL && blueL > greenL) {
           lastColor = 3; 
-        //  return lastColor;    
         } else if (redL > blueL && greenL > blueL && greenL > 25) {
           lastColor = 4; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && greenL > blueL &&  greenL < 20) {
           lastColor = 5; // Yellow
-      //   return lastColor;    
         } else if (redL > blueL && redL > greenL) {
           lastColor = 1; 
-        //  return lastColor;    
         } else {
           lastColor = 8; // Unknown or Orange
-        //  return lastColor;     
         }
 
         return lastColor;
