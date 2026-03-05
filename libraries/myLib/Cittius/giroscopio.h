@@ -1,3 +1,6 @@
+#ifndef GIROSCOPIO_H
+#define GIROSCOPIO_H
+
 /*
 Sketch usa 6.198 bytes (2%) de espaço de armazenamento do programa. O máximo é 253.952 bytes.
 As variáveis globais usam 701 bytes (8%) de memória dinâmica, deixando 7.491 bytes para variáveis locais. O máximo é 8.192 bytes.
@@ -535,4 +538,40 @@ int16_t sensorMovimento(uint8_t PORT, uint8_t mode){
       }
     break;
   }
+  return 0; // Backup return
 }
+
+// NOVA FUNCAO: Permite extrair o eixo Z ou os dados reais de Rotação (Giro) perdidos na func principal
+int16_t sensorMovimentoAvancado(uint8_t PORT, uint8_t axis){
+  // Fazemos uma chamada fake apenas para inicializar/atualizar buffers de hardware
+  sensorMovimento(PORT, 0); 
+  
+  // Re-lê os dados para extrair Gyro e Z especificamente da porta solicitada
+  int16_t z_accel, x_gyro, y_gyro, z_gyro;
+  switch(PORT) {
+    case 1:
+      I2C_1.beginTransmission(MPU6050_ADDRESS); I2C_1.write(MPU6050_ACCEL_ZOUT_H); I2C_1.endTransmission(false);
+      I2C_1.requestFrom(MPU6050_ADDRESS, 2, true); z_accel = (I2C_1.read() << 8) | I2C_1.read();
+      I2C_1.beginTransmission(MPU6050_ADDRESS); I2C_1.write(MPU6050_GYRO_XOUT_H); I2C_1.endTransmission(false);
+      I2C_1.requestFrom(MPU6050_ADDRESS, 6, true);
+      x_gyro = (I2C_1.read() << 8) | I2C_1.read(); y_gyro = (I2C_1.read() << 8) | I2C_1.read(); z_gyro = (I2C_1.read() << 8) | I2C_1.read();
+      break;
+    case 5:
+      I2C_5.beginTransmission(MPU6050_ADDRESS); I2C_5.write(MPU6050_ACCEL_ZOUT_H); I2C_5.endTransmission(false);
+      I2C_5.requestFrom(MPU6050_ADDRESS, 2, true); z_accel = (I2C_5.read() << 8) | I2C_5.read();
+      I2C_5.beginTransmission(MPU6050_ADDRESS); I2C_5.write(MPU6050_GYRO_XOUT_H); I2C_5.endTransmission(false);
+      I2C_5.requestFrom(MPU6050_ADDRESS, 6, true);
+      x_gyro = (I2C_5.read() << 8) | I2C_5.read(); y_gyro = (I2C_5.read() << 8) | I2C_5.read(); z_gyro = (I2C_5.read() << 8) | I2C_5.read();
+      break;
+    // ... expansivel para outras portas se necessario ...
+    default: return 0;
+  }
+  
+  if(axis == 2) return map(z_accel, 16300, -16300, 90, -90); // Z-Accel
+  if(axis == 3) return x_gyro / 131; // X-Gyro (deg/s typical scaling)
+  if(axis == 4) return y_gyro / 131; // Y-Gyro
+  if(axis == 5) return z_gyro / 131; // Z-Gyro
+  return 0;
+}
+
+#endif
