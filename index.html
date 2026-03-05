@@ -19,8 +19,7 @@
   <script type="text/javascript" src="../../ThirdParty/arduino_Cittius/common/js/FileSaver.min.js"></script>
   <script type="text/javascript" src="../../ThirdParty/arduino_Cittius/common/js/blockly_helper.js"></script>
   <script src="../../ThirdParty/arduino_Cittius/common/js/lib/ace/ace.js" type="application/javascript"></script>
-  <script src="../../ThirdParty/arduino_Cittius/common/js/lib/ace/ext-language_tools.js"
-    type="application/javascript"></script>
+  <script src="../../ThirdParty/arduino_Cittius/common/js/lib/ace/ext-language_tools.js" type="application/javascript"></script>
   <script type="text/javascript" src="./others/profile.js"></script>
 
   <script type="text/javascript" src="../../ThirdParty/arduino_Cittius/generators/factory.js"></script>
@@ -93,17 +92,12 @@
   <link rel="stylesheet" type="text/css" href="../../ThirdParty/arduino_Cittius/common/css/button.css" />
   <link rel="stylesheet" type="text/css" href="../../ThirdParty/arduino_Cittius/common/css/xscrollbar.css" />
 
-
-
 </head>
-  <div id="watermark-caio">@caiofps_</div>
 <body>
-
+  <div id="watermark-caio">@caiofps_</div>
   <xml id="toolbox" style="display: none;">
     <category id="" name="Funções Nativa Arduino" colour="230">
       <category id="catInOut" colour="#4A90E2">
-        <!--block type="inout_highlow" > 
-      </block-->
         <block type="inout_digital_write2">
           <value name="PIN">
             <shadow type="pins_digital"></shadow>
@@ -487,23 +481,6 @@
         </block>
         <block type="SHT20">
         </block>
-        <!--block type="NTC_TEMP">
-        <value name="NominalResistance">
-          <shadow type="math_number">
-            <field name="NUM">10000</field>
-          </shadow>
-        </value>
-        <value name="betaCoefficient">
-          <shadow type="math_number">
-            <field name="NUM">3950</field>
-          </shadow>
-        </value>
-        <value name="seriesResistor">
-          <shadow type="math_number">
-            <field name="NUM">10000</field>
-          </shadow>
-        </value>
-      </block-->
         <block type="mlx90614_init">
           <value name="mlx90614_address">
             <shadow type="math_number">
@@ -514,9 +491,6 @@
         <block type="mlx90614_get_data">
         </block>
 
-        <!-- 改用DF TCS34725 颜色识别传感器库 -->
-        <!-- <block type="TCS34725_Get_RGB">
-      </block> -->
         <block type="TCS34725_Get_RGB">
         </block>
 
@@ -601,7 +575,6 @@
         </block>
         <block type="sensor_encoder_handle">
         </block>
-        <!--DS1302-->
         <block type="DS1302_init">
           <value name="RST">
             <shadow type="pins_digital">
@@ -1901,7 +1874,6 @@
               </block>
             </statement>
           </block>
-          <!-- <block type="oled_define_bitmap_data"></block> -->
           <block type="tool_modulus_show">
             <field name="VAR">bitmap</field>
             <field name="x">96</field>
@@ -2638,40 +2610,6 @@
         </category>
       </category>
       <category id="catNetwork" colour="0">
-        <!--       <category id="catEthernet" colour="0">
-        <block type="ethernet_init_begin">
-          <value name="MAC">
-            <block type="ethernet_mac_address"></block>
-          </value>
-        </block>
-        <block type="ethernet_init_local_ip"></block>
-        <block type="ethernet_client_connect_server">
-          <value name="PORT">
-            <shadow type="math_number">
-              <field name="NUM">80</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="ethernet_client_connected"></block>
-        <block type="ethernet_client_available"></block>
-        <block type="ethernet_client_read"></block>
-        <block type="ethernet_client_stop"></block>
-        <block type="ethernet_client_print">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-        </block>
-        <block type="ethernet_client_println">
-          <value name="TEXT">
-            <block type="text">
-              <field name="TEXT"></field>
-            </block>
-          </value>
-        </block>
-        <block type="ethernet_client_get_request"></block>
-      </category> -->
         <category id="catBlynk" name="catBlynk" colour="160">
           <block type="blynk_usb_server">
             <value name="auth_key">
@@ -3301,109 +3239,8 @@
           <block type="Blynk_iot_CONNECT_STATE">
             <statement name="DO"></statement>
           </block>
-          </block>
-          <block type="Blynk_iot_BLYNK_syncAll">
-          </block>
-          <block type="blynk_iot_syncVirtual">
-            <field name="Vpin">V0</field>
-          </block>
         </category>
       </category>
-
-
-      <!--category id= "" name = "Sensores EST" colour = "#19A15F">
-      <block type = "readControlIR_1">
-        <value name="PIN_">
-          <shadow type="pins_digital">
-            <field name="PIN">4</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type = "readColorEv3">
-
-      </block>
-    </category-->
-    </category>
-
-    <category id="ED06" name="Robótica" colour="230">
-      <category id="catControl1" name="Controladora" colour="#3ea8ff">
-        <block type="Setup_Cittius"></block>
-
-        <block type="Button_ED2">
-          <value name="PIN">
-            <shadow type="pins_BTNS">
-              <field name="PIN">49</field>
-            </shadow>
-          </value>
-        </block>
-
-
-      </category>
-
-      <category id="catControl2" name="Controle" colour="#F5B041">
-
-        <block type="SCoop_sleep_ED">
-          <value name="sleeplength">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="loop_ED1"></block>
-    
-        <block type="controls_end_program_ED">
-        </block>
-
-        <block type="controls_flow_statements">
-        </block>
-        
-        <block type="simple_timer">
-          <field name="NO">1</field>
-          <value name="timein">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="controls_for_ED">
-
-          <value name="TO">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-
-        </block>
-
-        <block type="controls_if">
-          <value name="IF0">
-            <block type="logic_compare">
-              <field name="OP">LT</field>
-              <value name="A">
-                <shadow type="math_number">
-                  <field name="NUM">0</field>
-                </shadow>
-              </value>
-              <value name="B">
-                <shadow type="math_number">
-                  <field name="NUM">0</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-
-        <block type="controls_switch_case">
-        </block>
-
-        <block type="espereAteQue">
-        </block>
-
-      </category>
-
       <category id="catMath" colour="230">
         <block type="math_number">
         </block>
@@ -3743,484 +3580,138 @@
       </category>
       <category id="catFun" custom="PROCEDURE" colour="#FF6680">
       </category>
-      <category id="" name="Tela" colour="#91114d">
-        <block type="TFT_fillScreen_ED">
-          <value name="COLOR">
-            <block type="TFT_color_seclet">
-              <field name="COLOR">#ff0000</field>
-            </block>
+      <category id="catSerialPort" colour="#7ED321">
+        <block type="serial_begin">
+          <value name="CONTENT">
+            <shadow type="math_number">
+              <field name="NUM">9600</field>
+            </shadow>
           </value>
         </block>
 
-
-        <!--block type="tft_set_Cursor">
-        <value name="POS_X">
-          <shadow type="math_number">
-            <field name="NUM">10</field>
-          </shadow>
-        </value>
-        <value name="POS_Y">
-          <shadow type="math_number">
-            <field name="NUM">20</field>
-          </shadow>
-        </value>
-      </block>
-
-      <block type="tft_set_Color">
-        <value name="COLOR">
-          <shadow type="math_number">
-            <field name="NUM">
-            </field>
-          </shadow>
-          <block type="TFT_color_seclet">
-            <field name="COLOR">33ccff</field>
-          </block>
-        </value>
-
-        <value name="COLOR2">
-          <shadow type="math_number">
-            <field name="NUM">
-            </field>
-          </shadow>
-          <block type="TFT_color_seclet">
-            <field name="COLOR">ffffff</field>
-          </block>
-        </value>
-
-      </block>
-
-      <block type="tft_println">
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">1234</field>
-          </shadow>
-        </value>
-      </block-->
-
-        <block type="tft_print_ED0">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">40</field>
-            </shadow>
-          </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-
-          <value name="COLOR1">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">0x000000</field>
-            </block>
-          </value>
-
-          <value name="TEXT">
+        <block type="serial_print">
+          <field name="serial_select">Serial</field>
+          <value name="CONTENT">
             <shadow type="text">
-              <field name="TEXT">1234</field>
+              <field name="TEXT">OLA MUNDO!</field>
+            </shadow>
+          </value>
+          <field name="new_line">println</field>
+        </block>
+
+        <block type="serial_write">
+        </block>
+
+        <block type="serial_print_num">
+          <value name="CONTENT">
+            <shadow type="math_number">
+              <field name="NUM">0</field>
             </shadow>
           </value>
         </block>
-
-        <block type="tft_print_NUMBER">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">40</field>
-            </shadow>
-          </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-
-          <value name="COLOR1">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">0x000000</field>
-            </block>
-          </value>
-
-          <value name="TEXT">
-            <shadow type="math_number">
-              <field name="NUM">1234</field>
+        <block type="serial_available">
+        </block>
+        <block type="serial_readstr">
+        </block>
+        <block type="serial_readstr_until">
+          <value name="CONTENT">
+            <shadow type="text_char">
+              <field name="TEXT">a</field>
             </shadow>
           </value>
         </block>
-        <!--block type="tft_print_ED">
-        <value name="POS_X">
-          <shadow type="math_number">
-            <field name="NUM">40</field>
-          </shadow>
-        </value>
-        <value name="POS_Y">
-          <shadow type="math_number">
-            <field name="NUM">110</field>
-          </shadow>
-        </value>
-        <value name="COLOR">
-          <shadow type="math_number">
-            <field name="NUM">
-            </field>
-          </shadow>
-          <block type="TFT_color_seclet">
-            <field name="COLOR">33ccff</field>
-          </block>
-        </value>
-
-        <value name="COLOR2">
-          <shadow type="math_number">
-            <field name="NUM">
-            </field>
-          </shadow>
-          <block type="TFT_color_seclet">
-            <field name="COLOR">0x000000</field>
-          </block>
-        </value>
-
-        <value name="TEXT">
-          <shadow type="text">
-            <field name="TEXT">1234</field>
-          </shadow>
-        </value>
-      </block-->
-
-        <!--block type="tft_icons_ED">
-        <value name="POS_X">
-          <shadow type="math_number">
-            <field name="NUM">0</field>
-          </shadow>
-        </value>
-        <value name="POS_Y">
-          <shadow type="math_number">
-            <field name="NUM">20</field>
-          </shadow>
-        </value>
-        <value name="COLOR">
-          <shadow type="math_number">
-            <field name="NUM">
-            </field>
-          </shadow>
-          <block type="TFT_color_seclet">
-            <field name="COLOR">33ccff</field>
-          </block>
-        </value>
-      </block-->
-
-        <block type="tft_drawPixel_ED">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">64</field>
-            </shadow>
+        <block type="serial_parseInt_Float">
+        </block>
+        <block type="serial_flush">
+        </block>
+        <block type="serial_softserial">
+          <value name="TX">
+            <shadow type="pins_digital"></shadow>
           </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">32</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
+          <value name="RX">
+            <shadow type="pins_digital"></shadow>
           </value>
         </block>
-
-        <block type="tft_drawLine_ED">
-          <value name="START_X">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="START_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="END_X">
-            <shadow type="math_number">
-              <field name="NUM">15</field>
-            </shadow>
-          </value>
-          <value name="END_Y">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_drawFastLine_ED">
-          <value name="START_X">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="START_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="LENGTH">
-            <shadow type="math_number">
-              <field name="NUM">30</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-
-        <block type="tft_Rect_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">120</field>
-            </shadow>
-          </value>
-          <value name="WIDTH">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="HEIGHT">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_RoundRect_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="WIDTH">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="HEIGHT">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="RADIUS">
-            <shadow type="math_number">
-              <field name="NUM">3</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_Circle_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">120</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">160</field>
-            </shadow>
-          </value>
-          <value name="RADIUS">
-            <shadow type="math_number">
-              <field name="NUM">6</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
+        <block type="serial_event">
         </block>
       </category>
-      <category id="" name="Motores" colour="#708090">
 
-        <block type="emFrente_ED">
-          <value name="NUM">
+    </category>
+
+    <category id="ED06" name="Robótica" colour="230">
+      <category id="catControl1" name="Controladora" colour="#3ea8ff">
+        <block type="Setup_Cittius"></block>
+
+        <block type="Button_ED2">
+          <value name="PIN">
+            <shadow type="pins_BTNS">
+              <field name="PIN">49</field>
+            </shadow>
+          </value>
+        </block>
+
+
+      </category>
+
+      <category id="catControl2" name="Controle" colour="#F5B041">
+
+        <block type="SCoop_sleep_ED">
+          <value name="sleeplength">
             <shadow type="math_number">
-              <field name="NUM">60</field>
+              <field name="NUM">1</field>
             </shadow>
           </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
         </block>
 
-        <block type="direita_ED">
-          <value name="NUM">
+        <block type="loop_ED1"></block>
+    
+        <block type="controls_end_program_ED">
+        </block>
+
+        <block type="controls_flow_statements">
+        </block>
+        
+        <block type="simple_timer">
+          <field name="NO">1</field>
+          <value name="timein">
             <shadow type="math_number">
-              <field name="NUM">60</field>
+              <field name="NUM">1</field>
             </shadow>
           </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
         </block>
 
-        <block type="esquerda_ED">
-          <value name="NUM">
+        <block type="controls_for_ED">
+
+          <value name="TO">
             <shadow type="math_number">
-              <field name="NUM">60</field>
-            </shadow>
-          </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor">
-              <field name="PIN">P1</field>
+              <field name="NUM">10</field>
             </shadow>
           </value>
 
         </block>
 
-        <block type="tras_ED">
-          <value name="NUM">
-            <shadow type="math_number">
-              <field name="NUM">70</field>
-            </shadow>
-          </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
-        </block>
-
-        <block type="pararDirecao_ED">
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor">
-              <field name="PIN">P1</field>
-            </shadow>
+        <block type="controls_if">
+          <value name="IF0">
+            <block type="logic_compare">
+              <field name="OP">LT</field>
+              <value name="A">
+                <shadow type="math_number">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+              <value name="B">
+                <shadow type="math_number">
+                  <field name="NUM">0</field>
+                </shadow>
+              </value>
+            </block>
           </value>
         </block>
 
-        <block type="interface_motor_ED">
-          <value name="NUM">
-            <shadow type="math_number">
-              <field name="NUM">70</field>
-            </shadow>
-          </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_Single">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
+        <block type="controls_switch_case">
         </block>
 
-        <block type="interface_motor_medio_ED">
-          <value name="NUM">
-            <shadow type="math_number">
-              <field name="NUM">70</field>
-            </shadow>
-          </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_Single">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
-        </block>
-
-        <block type="definir_motor">
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_SingleEncoder">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-
-        <block type="obter_motor1">
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_SingleEncoder">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
+        <block type="espereAteQue">
         </block>
 
       </category>
@@ -4483,7 +3974,7 @@
         </block>
 
         <block type="myGiro">  
-        </block>    
+        </block>   
         
         <block type="getControler3">  
         </block>   
@@ -4519,712 +4010,23 @@
           </value>
         </block>
       </category>
-
-      <category id="catSerialPort" colour="#7ED321">
-        <block type="serial_begin">
-          <value name="CONTENT">
-            <shadow type="math_number">
-              <field name="NUM">9600</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="serial_print">
-          <field name="serial_select">Serial</field>
-          <value name="CONTENT">
-            <shadow type="text">
-              <field name="TEXT">OLA MUNDO!</field>
-            </shadow>
-          </value>
-          <field name="new_line">println</field>
-        </block>
-
-        <block type="serial_write">
-        </block>
-
-        <block type="serial_print_num">
-          <value name="CONTENT">
-            <shadow type="math_number">
-              <field name="NUM">0</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="serial_available">
-        </block>
-        <block type="serial_readstr">
-        </block>
-        <block type="serial_readstr_until">
-          <value name="CONTENT">
-            <shadow type="text_char">
-              <field name="TEXT">a</field>
-            </shadow>
-          </value>
-        </block>
-        <block type="serial_parseInt_Float">
-        </block>
-        <block type="serial_flush">
-        </block>
-        <block type="serial_softserial">
-          <value name="TX">
-            <shadow type="pins_digital"></shadow>
-          </value>
-          <value name="RX">
-            <shadow type="pins_digital"></shadow>
-          </value>
-        </block>
-        <block type="serial_event">
-        </block>
-      </category>
-
     </category>
 
-    <!--category id="ED06_" name="Robótica - Livro 2022 (versão 1.0)" colour="230">
-
-      <category id="catControl3" name="Controle" colour="#ffab19">
-
-        <block type="SCoop_sleep_ED1">
-          <value name="sleeplength">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-
-
-        <block type="controls_for_ED1">
-          <value name="TO">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="loop_ED1"></block>
-
-        <block type="se_ED1">
-          <value name="TO">
-          </value>
-        </block>
-
-        <block type="se_senao_ED1">
-          <value name="TO">
-          </value>
-          <value name="PO">
-          </value>
-        </block>
-
-
-        <block type="espereAteQue_ED1">
-        </block>
-
-      </category>
-
-      <category id="" name="Operadores" colour="#40bf4a">
-        <block type="math_number_ED1">
-        </block>
-        <block type="math_somar">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_subtrair">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_multiplicar">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_dividir">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_maior">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">50</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_menor">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">50</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_igual">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM">50</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_e">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_ou">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-          <value name="B">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="math_negado">
-          <value name="A">
-            <shadow type="math_number">
-              <field name="NUM"></field>
-            </shadow>
-          </value>
-        </block>
-
-      </category>
-
-      <category id="" name="Variáveis" colour="#ff8d1b" custom="VARIABLE">
-      </category>
-
-      <category id="" name="Meus Blocos" custom="PROCEDURE" colour="#ff6680">
-      </category>
-
-      <category id="" name="Motores" colour="#708090">
-
-
-        <block type="interface_motor_ED1">
-          <value name="NUM">
-            <shadow type="math_number">
-              <field name="NUM">50</field>
-            </shadow>
-          </value>
-
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_Single">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-
-        </block>
-
-
-
-        <block type="definir_motor_ED1">
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_SingleEncoder">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-
-        <block type="obter_motor_ED1">
-          <value name="PIN_SDA">
-            <shadow type="pins_Motor_SingleEncoder">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-      </category>
-
-      <category id="" name="Sensor" colour="#19a15f">
-
-        <block type="my_text_block">
-          <field name="my_label">Meu Texto</field>
-        </block>
-
-        <block type="getButtonCittius_ED1">
-          <value name="PIN_SDA">
-            <shadow type="pins_Sensor1">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="controls_if">
-          <value name="IF0">
-            <block type="logic_compare">
-              <field name="OP">EQ</field>
-              <value name="A">
-                <shadow type="getButtonCittius_ED1">
-                  <value name="PIN_SDA">
-                    <shadow type="pins_Sensor1">
-                      <field name="PIN">P1</field>
-                    </shadow>
-                  </value>
-                </shadow>
-              </value>
-              <value name="B">
-                <shadow type="math_number">
-                  <field name="NUM">1</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-
-
-
-
-        <block type="Utrassonic1_ED">
-          <value name="PIN_SDA">
-            <shadow type="pins_Sensor1">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="controls_if">
-          <value name="IF0">
-            <block type="logic_compare">
-              <field name="OP">LT</field>
-              <value name="A">
-                <shadow type="Utrassonic1_ED">
-                  <value name="PIN_SDA">
-                    <shadow type="pins_Sensor1">
-                      <field name="PIN">P1</field>
-                    </shadow>
-                  </value>
-                </shadow>
-              </value>
-              <value name="B">
-                <shadow type="math_number">
-                  <field name="NUM">30</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-
-        <block type="sensorColor1_ED">
-          <value name="PIN_SDA">
-            <shadow type="pins_Sensor1">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="controls_if">
-          <value name="IF0">
-            <block type="logic_compare">
-              <field name="OP">EQ</field>
-              <value name="A">
-                <shadow type="sensorColor1_ED">
-                  <value name="PIN_SDA">
-                    <shadow type="pins_Sensor1">
-                      <field name="PIN">P1</field>
-                    </shadow>
-                  </value>
-                </shadow>
-              </value>
-              <value name="B">
-                <shadow type="math_number">
-                  <field name="NUM">1</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-
-        <block type="sensorAcel1_ED">
-          <value name="PIN_SDA">
-            <shadow type="pins_Sensor1">
-              <field name="PIN">P1</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="controls_if_ED">
-          <value name="IF0">
-            <block type="logic_compare">
-              <field name="OP">EQ</field>
-              <value name="A">
-                <shadow type="sensorAcel1_ED">
-                  <value name="PIN_SDA">
-                    <shadow type="pins_Sensor1">
-                      <field name="PIN">P1</field>
-                    </shadow>
-                  </value>
-                </shadow>
-              </value>
-              <value name="B">
-                <shadow type="math_number">
-                  <field name="NUM">1</field>
-                </shadow>
-              </value>
-            </block>
-          </value>
-        </block>
-
-
-
-      </category>
-
-      <category id="" name="Controladora" colour="#5ca6ea">
-        <block type="Setup_Cittius_ED1"></block>
-      </category>
-
-      <category id="" name="Tela" colour="#ffb7cb">
-        <block type="TFT_fillScreen_ED">
-          <value name="COLOR">
-            <block type="TFT_color_seclet">
-              <field name="COLOR">#ff0000</field>
-            </block>
-          </value>
-        </block>
-
-
-
-
-        <block type="tft_set_Color">
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-
-          <value name="COLOR2">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">ffffff</field>
-            </block>
-          </value>
-
-        </block>
-
-
-
-        <block type="tft_print_ED0">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">40</field>
-            </shadow>
-          </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-
-          <value name="COLOR1">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">0x000000</field>
-            </block>
-          </value>
-
-          <value name="TEXT">
-            <shadow type="text">
-              <field name="TEXT">1234</field>
-            </shadow>
-          </value>
-        </block>
-
-        <block type="tft_print_NUMBER">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">40</field>
-            </shadow>
-          </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-
-          <value name="COLOR1">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">0x000000</field>
-            </block>
-          </value>
-
-          <value name="TEXT">
-            <shadow type="math_number">
-              <field name="NUM">1234</field>
-            </shadow>
-          </value>
-        </block>
-
-
-        <block type="tft_drawPixel_ED">
-          <value name="POS_X">
-            <shadow type="math_number">
-              <field name="NUM">64</field>
-            </shadow>
-          </value>
-          <value name="POS_Y">
-            <shadow type="math_number">
-              <field name="NUM">32</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-
-        <block type="tft_drawLine_ED">
-          <value name="START_X">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="START_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="END_X">
-            <shadow type="math_number">
-              <field name="NUM">15</field>
-            </shadow>
-          </value>
-          <value name="END_Y">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_drawFastLine_ED">
-          <value name="START_X">
-            <shadow type="math_number">
-              <field name="NUM">1</field>
-            </shadow>
-          </value>
-          <value name="START_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="LENGTH">
-            <shadow type="math_number">
-              <field name="NUM">30</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-
-        <block type="tft_Rect_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">120</field>
-            </shadow>
-          </value>
-          <value name="WIDTH">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="HEIGHT">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_RoundRect_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">110</field>
-            </shadow>
-          </value>
-          <value name="WIDTH">
-            <shadow type="math_number">
-              <field name="NUM">10</field>
-            </shadow>
-          </value>
-          <value name="HEIGHT">
-            <shadow type="math_number">
-              <field name="NUM">20</field>
-            </shadow>
-          </value>
-          <value name="RADIUS">
-            <shadow type="math_number">
-              <field name="NUM">3</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-        <block type="tft_Circle_ED">
-          <value name="D0_X">
-            <shadow type="math_number">
-              <field name="NUM">120</field>
-            </shadow>
-          </value>
-          <value name="D0_Y">
-            <shadow type="math_number">
-              <field name="NUM">160</field>
-            </shadow>
-          </value>
-          <value name="RADIUS">
-            <shadow type="math_number">
-              <field name="NUM">6</field>
-            </shadow>
-          </value>
-          <value name="COLOR">
-            <shadow type="math_number">
-              <field name="NUM">
-              </field>
-            </shadow>
-            <block type="TFT_color_seclet">
-              <field name="COLOR">33ccff</field>
-            </block>
-          </value>
-        </block>
-      </category>
-    </category-->
-
-
+    <category id="catPhysics" name="Física Aplicada" colour="230">
+      <block type="physics_velocity"></block>
+      <block type="physics_acceleration"></block>
     </category>
 
+    <category id="catAdvancedRobotics" name="Robótica Avançada" colour="120">
+      <block type="mpu6050_comp_filter"></block>
+      <block type="motor_soft_start"></block>
+      <block type="pid_controller"></block>
+    </category>
+
+    <category id="catMobileBT" name="Comunicação Mobile" colour="140">
+      <block type="bluetooth_init"></block>
+      <block type="bluetooth_read_string"></block>
+    </category>
 
     <sep></sep>
     <category id="catFactory" name="catFactory" colour="#777777">
@@ -5244,16 +4046,6 @@
       <block type="factory_block_with_textarea"></block>
       <block type="factory_block_return_with_textarea"></block>
     </category>
-    <!--category id="catTools" name="catTools" colour="#555555">
-      <block type="IICSCAN"></block>
-
-      <block type="folding_block"></block>
-      <block type="uno_pin" m-show="arduino:avr:uno"></block>
-      <block type="nano_pin" m-show="arduino:avr:nano"></block>
-      <block type="mega_pin" m-show="arduino:avr:mega"></block>
-      <block type="promini_pin" m-show="arduino:avr:pro"></block>
-      <block type="leonardo_pin" m-show="arduino:avr:leonardo"></block>
-    </category-->
   </xml>
 </body>
 
