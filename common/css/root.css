@@ -34,6 +34,54 @@ body, #content_area {
     border-right: 1px solid #333 !important;
 }
 
+/* =========================================
+   UI MODIFICATIONS - SCROLLBAR & TOOLBOX
+========================================= */
+
+/* Scrollbars modernas para toda a interface */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #1e1e1e !important; 
+}
+::-webkit-scrollbar-thumb {
+    background: #555 !important; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #777 !important; 
+}
+
+/* Estilização da Toolbox (Menu lateral esquerdo) */
+.blocklyToolboxDiv {
+    padding-top: 10px !important;
+    box-shadow: 2px 0px 5px rgba(0,0,0,0.5);
+    border-right: 1px solid #333 !important;
+}
+.blocklyTreeRow {
+    border-radius: 6px;
+    margin: 2px 8px;
+    padding: 2px 0;
+    transition: background-color 0.2s ease;
+}
+.blocklyTreeRow:hover {
+    background-color: #333333 !important;
+}
+.blocklyTreeSelected {
+    background-color: #007acc !important; /* Azul destaque VS Code */
+}
+.blocklyTreeLabel {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: 14px !important;
+    color: #cccccc !important;
+}
+.blocklyTreeSelected .blocklyTreeLabel {
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
 /*@media screen and (max-width: 1920px) {
     :root {
         --nav-height: 35px;
